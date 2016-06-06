@@ -5,11 +5,19 @@ import static examenfinalparte2.ClaculaPrimo.numeroPrimo;
 public class Metodos {
     
 //Constructor por defecto
-    
+    /**
+     * Constructor por defecto
+     */
 public Metodos() {
     }
 
 //Métodos
+/**
+ * Método que calcula los números primos dependientemente del número de dígitos que le introduzcas. Si le introduces 2, te calculará todos los números primos de dos dígitos, por ejemplo.
+ * @param digitos 
+ */
+
+/*Este metodo se estrajo con el fin de optimizar el código de los argumentos*/
 
     public static void CalcularPrimo(int digitos) {
         
