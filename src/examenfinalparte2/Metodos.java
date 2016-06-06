@@ -1,61 +1,65 @@
 package examenfinalparte2;
 
-public class Principal {
+import static examenfinalparte2.ClaculaPrimo.numeroPrimo;
 
-    public static boolean p = false;
+public class Metodos {
+    
+//Constructor por defecto
+    
+public Metodos() {
+    }
 
-    public static void main(String arg[]) {
-        int dig = 2;
-        int ndig = 0;
-        if (dig <= 0) {
-            System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
-        }
+//Métodos
+
+    public static void CalcularPrimo(int digitos) {
+        
+        int numDigitos;
+
         for (int i = 1; i <= 99999; i++) {
-            int aux = i;
+            int division = i;
 
             int contador = 0;
 
-            while (aux != 0) {
-                aux = aux / 10;
+            while (division != 0) {
+                division = division / 10;
                 contador++;
             }
-            ndig = contador;
+            numDigitos = contador;
 
-            if (ndig == dig) {
+            if (numDigitos == digitos) {
                 if (i < 4) {
-                    p = true;
+                    numeroPrimo = true;
                 } else {
                     if (i % 2 == 0) {
-                        p = false;
+                        numeroPrimo = false;
                     } else {
                         int contador1 = 0;
                         int i1 = 1;
-                        int k = (i - 1) / 2;
-                        if (k % 2 == 0) {
-                            k--;
+                        int limite = (i - 1) / 2;
+                        if (limite % 2 == 0) {
+                            limite--;
                         }
 
-                        while (i1 <= k) {
+                        while (i1 <= limite) {
                             if (i % i1 == 0) {
                                 contador1++;
                             }
                             i1 += 2;
                             if (contador1 == 2) {
-                                i1 = k + 1;
+                                i1 = limite + 1;
                             }
                         }
 
                         if (contador1 == 1) {
-                            p = true;
+                            numeroPrimo = true;
                         }
                     }
                 }
 
-                if (p == true) {
+                if (numeroPrimo == true) {
                     System.out.println(i);
                 }
             }
         }
     }
-
 }
